@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+:root{
+    --Linear-Gradient: linear-gradient(to right,hsl(236, 72%, 79%) , hsl(237, 63%, 64%)); 
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+body{
+    background: url("images/bg-top.svg") 100% 100%, url("images/bg-bottom.svg") 0 110%;
+    background-repeat: no-repeat;
+    background-color: var(--Very-Light-Grayish-Blue);
+    padding: 5%;
+}
+
+header{
+    text-align: center;
+}
+
+header h2{
+    color: var(--Dark-Grayish-Blue);
+    margin-bottom: 3%;
+}
+
+header .switcher{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    color: var(--Light-Grayish-Blue);
+    margin-bottom: 5%;
+}
+
+#switch{
+    appearance: none;
+    width: 50px;
+    height: 25px;
+    background: var(--Linear-Gradient);
+    border-radius: 20px;
+    cursor: pointer;
+}
+  
+#switch:checked{
+    background: var(--Linear-Gradient) ;
+}
+
+#switch::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-top: 2px;
+    margin-left: 28px;
+    background-color: var(--Very-Light-Grayish-Blue);
+    position: absolute;
+    z-index: 1;
+    transition: transform .2s linear;;
+}
+  
+#switch:checked::after{
+    background-color: var(--Very-Light-Grayish-Blue);
+    transform: translateX(-25px);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -5%;
+}
+
+.box p{
+    margin: 5%;
+    font-size: 13px;
+}
+
+.box .dollar{
+    font-size: 25px;
+}
+
+.box-1, .box-3{
+    position: relative;
+    z-index: 0;
+    width: 25%;
+    padding: 3% 5%;
+    background-color: white;
+    text-align: center;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.box-1 hr, .box-3 hr{
+    width: 150%;
+    margin: 8% 0;
+    margin-left: -25%;
+    background-color: var(--Light-Grayish-Blue);
+    height: 0.1px;
+    border: 0px solid transparent;
+}
+
+.box-1{
+    border-radius: 10px 0 0 10px;
+    box-shadow: -1px 0px 20px 5px hsl(235, 65%, 89%);
+}
+
+.box-3{
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 0px 20px 5px hsl(235, 65%, 89%);
+}
+
+.box-1 button, .box-3 button{
+    width: 150%;
+    margin-top: 5%;
+    margin-left: -25%;
+    background: var(--Linear-Gradient);
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 3% 10%;
+    color: var(--Very-Light-Grayish-Blue);
+}
+
+.box-1 button:hover, .box-3 button:hover{
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid hsl(236, 72%, 79%);
+    color: hsl(237, 63%, 64%);
+}
+
+.box-2{
+    position: relative;
+    z-index: 1;
+    width: 25%;
+    background: var(--Linear-Gradient);
+    background-repeat: no-repeat;
+    padding: 4% 5%;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--Very-Light-Grayish-Blue);
+}
+
+.box-2 hr{
+    width: 150%;
+    margin: 8% 0;
+    margin-left: -25%;
+    background-color: var(--Very-Light-Grayish-Blue);
+    height: 0.1px;
+    border: 0px solid transparent;
+}
+
+.box-2 button{
+    width: 150%;
+    margin-top: 5%;
+    margin-left: -25%;
+    background: var(--Very-Light-Grayish-Blue);
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 3% 10%;
+    color: hsl(237, 63%, 64%);
+}
+
+.box-2 button:hover{
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--Very-Light-Grayish-Blue);
+    color: var(--Very-Light-Grayish-Blue);
+}
+
+@media screen and (max-width: 375px) {
+    body{
+        background: url("images/bg-top.svg") 15em 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 3%;
+        height: 30em;
+    }
+    
+    header{
+        margin-top: 15%;
+        text-align: center;
+    }
+    
+    header h2{
+        color: var(--Dark-Grayish-Blue);
+        margin-bottom: 10%;
+    }
+    
+    header .switcher{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3%;
+        color: var(--Light-Grayish-Blue);
+        margin-bottom: 15%;
+    }
+      
+    main{
+        flex-direction: column;
+    }
+
+    .box{
+        margin-bottom: 10%;
+    }
+
+    .box h1{
+        font-size: 50px;
+    }
+    
+    .box .dollar{
+        font-size: 30px;
+    }
+
+    .box-1, .box-3{
+        width: 100%;
+        padding: 3% 5%;
+        border-radius: 10px;
+    }
+    
+    .box-1 hr, .box-3 hr{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .box-1 button, .box-3 button{
+        width: 100%;
+        margin: 5% 0;
+    }
+    
+    .box-2{
+        width: 100%;
+    }
+    
+    .box-2 hr{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .box-2 button{
+        width: 100%;
+        margin: 5% 0;
+    }
+}
